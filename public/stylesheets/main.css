@@ -49,6 +49,15 @@ a:hover { color: #fff; background-color:#000; }
   list-style: square;
 }
 
+.clear_after:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+
 /*************************************/
 /*** G E N E R A L   S T Y L I N G ***/
 /*************************************/
@@ -76,6 +85,10 @@ div#content {
   padding: .75em;
 }
 
+p {
+  margin-bottom: 1em;
+}
+
 p#flash {
   width: 80%;
   margin: 0 auto 1em;
@@ -98,6 +111,15 @@ div#footer, div#pusher {
 /*******************************/
 /*** P O S T   S T Y L I N G ***/
 /*******************************/
+
+div#new_post > form {
+  float: right;
+}
+
+p#new_post > span {
+  padding: .25em 1em;
+  background-color: #eee;
+}
 
 div.post > div.post_date {
   font: small-caps 125% palatino, georgia, serif;

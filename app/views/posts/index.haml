@@ -1,5 +1,11 @@
+#new_post.clear_after= button_to "New post", new_post_path if admin?
+
 - @posts.each do |post|
   .post
     .post_date= post.created_at.strftime(date_format_string)
     %h3= post.title
     .post_body= post.body
+    - if admin?
+      = link_to "Edit post", edit_post_path(post)
+      |
+      = link_to "Remove post", post_path(post), :confirm => "Are you sure?", :method => :delete
