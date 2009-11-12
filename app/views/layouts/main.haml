@@ -8,9 +8,11 @@
     = javascript_auto_include_tags
     = behaveJS_bootstrap
   %body
-  #content
+  #wrapper
     #header
       = link_to image_tag("banner.png"), "/"
     #body
       %p{ :style => "color: green" }= flash[:notice]
       = yield
+    #pusher
+  #footer
