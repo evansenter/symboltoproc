@@ -3,13 +3,14 @@
   %head
     %meta{ "http-equiv" => "content-type", :content => "text/html;charset=UTF-8" }/
     %title= "Posts: #{controller.action_name}"
-    = stylesheet_link_tag "default"
+    = stylesheet_link_tag :defaults
     = javascript_include_tag :defaults
     = javascript_auto_include_tags
     = behaveJS_bootstrap
   %body
   #content
     #header
+      = link_to image_tag("banner.png"), "/"
     #body
       %p{ :style => "color: green" }= flash[:notice]
       = yield
