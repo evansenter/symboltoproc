@@ -1,6 +1,5 @@
 body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size:   13px;
+  font-size: 13px;
   line-height: 18px;
 }
 
@@ -60,6 +59,7 @@ html, body {
 
 body {
   background: url("/images/background_tartan.png");
+  font-family: "Trebuchet MS", Verdana, Helvetica, sans-serif;
 }
 
 div#wrapper {
@@ -74,6 +74,15 @@ div#wrapper {
 div#content {
   color: #2b2b2b;
   padding: .75em;
+}
+
+p#flash {
+  width: 80%;
+  margin: 0 auto 1em;
+  padding: .25em;
+  border: 1px solid #9daa9d;
+  background-color: #efe;
+  text-align: center;
 }
 
 div#footer {
@@ -103,6 +112,5 @@ div.post > h3 {
 }
 
 div.post > div.post_body {
-  font-family: "Trebuchet MS", Verdana, Helvetica, sans-serif;
   margin-bottom: 2em;
 }
