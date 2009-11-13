@@ -1,6 +1,6 @@
 body, p, ol, ul, td {
   font-size: 13px;
-  line-height: 18px;
+  line-height: 22px;
 }
 
 pre {
@@ -8,10 +8,6 @@ pre {
   padding: 10px;
   font-size: 11px;
 }
-
-a { color: #000; }
-a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
 
 .fieldWithErrors {
   padding: 2px;
@@ -116,14 +112,17 @@ div#new_post > form {
   float: right;
 }
 
-p#new_post > span {
-  padding: .25em 1em;
-  background-color: #eee;
+div#edit_post > form {
+  float: left;
+}
+
+.left_button {
+  margin-right: .5em;
 }
 
 div.post > div.post_date {
   font: small-caps 125% palatino, georgia, serif;
-  letter-spacing: .1em;
+  letter-spacing: .25em;
   text-align: center;
   border-bottom: 1px solid #ddd;
 }
@@ -133,6 +132,15 @@ div.post > h3 {
   margin: 1.25em 0 .75em;
 }
 
+div.post > h3 > a {
+  color: #2b2b2b;
+  text-decoration: none;
+}
+
+div.post > h3 > a:hover {
+  text-decoration: underline;
+}
+
 div.post > div.post_body {
-  margin-bottom: 2em;
+  margin-bottom: 1.5em;
 }

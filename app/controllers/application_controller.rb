@@ -18,10 +18,8 @@ class ApplicationController < ActionController::Base
   
   def authorize
     unless admin?
-      returning false do
-        flash[:notice] = "You do not have permission for that page."
-        redirect_to root_path
-      end
+      flash[:notice] = "You do not have permission for that page."
+      redirect_to root_path
     end
   end
 end
