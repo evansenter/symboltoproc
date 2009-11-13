@@ -1,4 +1,4 @@
 - if admin?
-  #edit_post.clear_after
+  #edit_post_buttons.clear_after
     = button_to "Edit post", edit_post_path(post), :class => "left_button", :method => :get
     = button_to "Remove post", post_path(post), :confirm => "Are you sure?", :method => :delete

@@ -1,9 +1,1 @@
-- form_for @post do |form|
-  %p
-    = form.label :title
-    = form.text_field :title
-  %p
-    = form.label :body
-    = form.text_area :body
-  %p= form.submit "Create"
-      
+- _edit_post_form(:submit_text => "Create")

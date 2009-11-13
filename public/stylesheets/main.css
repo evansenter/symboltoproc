@@ -1,3 +1,18 @@
+/*************************************/
+/*** G E N E R A L   S T Y L I N G ***/
+/*************************************/
+
+/* Catch-all styles. */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: url("/images/background_tartan.png");
+  font-family: "Trebuchet MS", Verdana, Helvetica, sans-serif;
+}
+
 body, p, ol, ul, td {
   font-size: 13px;
   line-height: 22px;
@@ -7,64 +22,6 @@ pre {
   background-color: #eee;
   padding: 10px;
   font-size: 11px;
-}
-
-.fieldWithErrors {
-  padding: 2px;
-  background-color: red;
-  display: table;
-}
-
-#errorExplanation {
-  width: 400px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-}
-
-#errorExplanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  background-color: #c00;
-  color: #fff;
-}
-
-#errorExplanation p {
-  color: #333;
-  margin-bottom: 0;
-  padding: 5px;
-}
-
-#errorExplanation ul li {
-  font-size: 12px;
-  list-style: square;
-}
-
-.clear_after:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
-
-
-/*************************************/
-/*** G E N E R A L   S T Y L I N G ***/
-/*************************************/
-
-html, body {
-  height: 100%;
-}
-
-body {
-  background: url("/images/background_tartan.png");
-  font-family: "Trebuchet MS", Verdana, Helvetica, sans-serif;
 }
 
 div#wrapper {
@@ -83,15 +40,6 @@ div#content {
 
 div#content p {
   margin-bottom: .75em;
-}
-
-p#flash {
-  width: 80%;
-  margin: 0 auto 1em;
-  padding: .25em;
-  border: 1px solid #bdd8be;
-  background-color: #efe;
-  text-align: center;
 }
 
 div#footer {
@@ -116,21 +64,70 @@ div#footer, div#pusher {
   height: 75px;
 }
 
+.clear_after:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* Error styling. */
+
+.fieldWithErrors {
+  color: #c00;
+}
+
+#errorExplanation {
+  width: 80%;
+  margin: 0 auto 1em;
+  border: 1px solid #ccc;
+  background-color: #fafafa;
+}
+
+#errorExplanation h2 {
+  background-color: #ddd;
+  color: #c00;
+  padding: .25em;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+#errorExplanation p {
+  margin: .5em !important;
+}
+
+#errorExplanation ul {
+  margin-bottom: .5em;
+  list-style-type: disc;
+}
+
+#errorExplanation ul li {
+  margin: 0 .5em 0 2.5em;
+}
+
+/* Flash message styling. */
+
+p#flash {
+  width: 80%;
+  margin: 0 auto 1em;
+  padding: .25em;
+  border: 1px solid #bdd8bd;
+  background-color: #efe;
+  text-align: center;
+}
+
 /*******************************/
 /*** P O S T   S T Y L I N G ***/
 /*******************************/
 
 /* Styling for buttons for posts. */
 
-div#new_post > form {
-  float: right;
-}
-
-div#edit_post {
+div#edit_post_buttons {
   margin-top: .75em;
 }
 
-div#edit_post > form {
+div#edit_post_buttons > form {
   float: left;
 }
 
@@ -138,7 +135,7 @@ div#edit_post > form {
   margin-right: .5em;
 }
 
-/* Styling for individual posts. */
+/* Styling for individual post display. */
 
 div.post {
   margin-top: 1.5em;
@@ -169,4 +166,42 @@ div.post > h3 > a:hover {
 div.post div.post_body a {
   background: transparent url("/images/external.png") no-repeat scroll right center;
   padding-right: 13px;
+}
+
+/* Styling for post forms. */
+
+div#post_form {
+  width: 90%;
+  margin: 0 auto;
+}
+
+div#post_form form div {
+  margin-bottom: .75em;
+}
+
+div#post_form form div[class~="fieldWithErrors"] {
+  margin-bottom: 0;
+}
+
+div#post_form form div label {
+  display: block;
+  font-size: 90%;
+}
+
+div#post_form form div label[class~="required"]:before {
+  content: "* ";
+}
+
+div#post_form form div input[type="text"] {
+  width: 100%;
+  font-size: 1.1em;
+}
+
+div#post_form form div textarea {
+  width: 100%;
+  padding: .25em;
+}
+
+div#post_form form div input[type="submit"] {
+  float: right;
 }

@@ -4,5 +4,4 @@
     .post
       %h3= link_to post.title, post_path(post)
       .post_body= post.body
-      
-      - _edit_post(:post => post)
+      - _edit_post_buttons(:post => post)

@@ -2,7 +2,7 @@
 %html
   %head
     %meta{ "http-equiv" => "content-type", :content => "text/html;charset=UTF-8" }/
-    %title= "Posts: #{controller.action_name}"
+    %title= "S Y M B O L t o P R O C"
     = stylesheet_link_tag :defaults
     = javascript_include_tag :defaults
     = javascript_auto_include_tags
@@ -14,10 +14,8 @@
       #content
         - unless flash.empty?
           %p#flash= flash[:notice]
-        
-        #new_post.clear_after= button_to "New post", new_post_path if admin?
         = yield
       #pusher
     #footer 
-      %p= "A nice little website to talk about the world, designed by evansenter at gmail dot com." + logged_in_notice
+      %p= "Built by evansenter [at] gmail [dot] com." + logged_in_notice
     = analytics_code
