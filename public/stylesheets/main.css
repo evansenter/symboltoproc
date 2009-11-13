@@ -73,7 +73,7 @@ div#wrapper {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -6em;
+  margin: 0 auto -75px;
 }
 
 div#content {
@@ -92,12 +92,19 @@ p#flash {
 
 div#footer {
   background-color: #2b2b2b;
+  color: #888;
   width: 800px;
   margin: 0 auto;
 }
 
+div#footer > p {
+  line-height: 75px;
+  margin-right: .75em;
+  text-align: center;
+}
+
 div#footer, div#pusher {
-  height: 6em;
+  height: 75px;
 }
 
 /*******************************/
@@ -147,4 +154,9 @@ div.post > h3 > a {
 
 div.post > h3 > a:hover {
   text-decoration: underline;
+}
+
+div.post div.post_body a {
+  background: transparent url("/images/external.png") no-repeat scroll right center;
+  padding-right: 13px;
 }
