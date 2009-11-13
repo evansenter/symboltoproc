@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_filter :authorize, :except => [:create, :destroy]
+  before_filter :authorize, :except => [:new, :create, :destroy]
   
   def create
     session[:password] = params[:password]
