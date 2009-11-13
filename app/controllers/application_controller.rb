@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   helper_method :admin?
   
   def admin?
-    session[:password] == "password"
+    session[:password] == ":2&onheroku"
   end
   
   def authorize

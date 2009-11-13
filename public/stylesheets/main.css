@@ -112,6 +112,10 @@ div#footer, div#pusher {
   height: 75px;
 }
 
+p {
+  margin-bottom: .75em;
+}
+
 /*******************************/
 /*** P O S T   S T Y L I N G ***/
 /*******************************/
