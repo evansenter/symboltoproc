@@ -81,15 +81,11 @@ div#content {
   padding: .75em;
 }
 
-p {
-  margin-bottom: 1em;
-}
-
 p#flash {
   width: 80%;
   margin: 0 auto 1em;
   padding: .25em;
-  border: 1px solid #9daa9d;
+  border: 1px solid #bdd8be;
   background-color: #efe;
   text-align: center;
 }
@@ -108,8 +104,14 @@ div#footer, div#pusher {
 /*** P O S T   S T Y L I N G ***/
 /*******************************/
 
+/* Styling for buttons for posts. */
+
 div#new_post > form {
   float: right;
+}
+
+div#edit_post {
+  margin-top: .75em;
 }
 
 div#edit_post > form {
@@ -118,6 +120,12 @@ div#edit_post > form {
 
 .left_button {
   margin-right: .5em;
+}
+
+/* Styling for individual posts. */
+
+div.post {
+  margin-top: 1.5em;
 }
 
 div.post > div.post_date {
@@ -139,8 +147,4 @@ div.post > h3 > a {
 
 div.post > h3 > a:hover {
   text-decoration: underline;
-}
-
-div.post > div.post_body {
-  margin-bottom: 1.5em;
 }
