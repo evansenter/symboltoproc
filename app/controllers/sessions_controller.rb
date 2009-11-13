@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_filter :authorize, :except => [:create, :destroy]
+  
   def create
     session[:password] = params[:password]
     flash[:notice] = "Login successful."
