@@ -33,15 +33,6 @@ div#wrapper {
   margin: 0 auto -75px;
 }
 
-div#content {
-  color: #2b2b2b;
-  padding: .75em;
-}
-
-div#content p {
-  margin-bottom: .75em;
-}
-
 div#footer {
   background-color: #2b2b2b;
   color: #666;
@@ -72,6 +63,33 @@ div#footer, div#pusher {
   visibility: hidden;
 }
 
+/* Content styling. */
+
+div#content {
+  color: #2b2b2b;
+  padding: 1.5em;
+}
+
+div#content p {
+  margin-bottom: .75em;
+}
+
+div#content ol, div#content ul {
+  margin-bottom: .75em;
+}
+
+div#content ol {
+  list-style-type: decimal;
+}
+
+div#content ul {
+  list-style-type: disc;
+}
+
+div#content li {
+  margin: 0 .5em 0 2.5em;
+}
+
 /* Error styling. */
 
 .fieldWithErrors {
@@ -95,15 +113,6 @@ div#footer, div#pusher {
 
 #errorExplanation p {
   margin: .5em !important;
-}
-
-#errorExplanation ul {
-  margin-bottom: .5em;
-  list-style-type: disc;
-}
-
-#errorExplanation ul li {
-  margin: 0 .5em 0 2.5em;
 }
 
 /* Flash message styling. */
@@ -168,12 +177,13 @@ div.post div.post_body a {
   padding-right: 13px;
 }
 
-/* Styling for post forms. */
-
-div#post_form {
-  width: 90%;
-  margin: 0 auto;
+div.post blockquote {
+  background: transparent url("/images/quote.png") no-repeat scroll left top;
+  margin-left: .5em;
+  padding-left: 24px;
 }
+
+/* Styling for post forms. */
 
 div#post_form form div {
   margin-bottom: .75em;
@@ -197,11 +207,12 @@ div#post_form form div input[type="text"] {
   font-size: 1.1em;
 }
 
-div#post_form form div textarea {
-  width: 100%;
-  padding: .25em;
-}
-
 div#post_form form div input[type="submit"] {
   float: right;
+}
+
+/* CKEditor overrides. */
+
+.cke_toolbox_collapser {
+  display: none;
 }
