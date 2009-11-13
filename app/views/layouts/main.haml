@@ -8,15 +8,16 @@
     = javascript_auto_include_tags
     = behaveJS_bootstrap
   %body
-  #wrapper
-    #header
-      = link_to image_tag("banner.png"), root_path
-    #content
-      - unless flash.empty?
-        %p#flash= flash[:notice]
-      
-      #new_post.clear_after= button_to "New post", new_post_path if admin?
-      = yield
-    #pusher
-  #footer 
-    %p= "A nice little website to talk about the world, designed by evansenter at gmail dot com." + logged_in_notice
+    #wrapper
+      #header
+        = link_to image_tag("banner.png"), root_path
+      #content
+        - unless flash.empty?
+          %p#flash= flash[:notice]
+        
+        #new_post.clear_after= button_to "New post", new_post_path if admin?
+        = yield
+      #pusher
+    #footer 
+      %p= "A nice little website to talk about the world, designed by evansenter at gmail dot com." + logged_in_notice
+    = analytics_code
