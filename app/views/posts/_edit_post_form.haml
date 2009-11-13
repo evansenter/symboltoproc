@@ -6,5 +6,5 @@
       = form.text_field :title
     %div
       = form.label :body, "Body", :class => "required"
-      = ckeditor_textarea :post, :body
+      = form.text_area :body
     %div= form.submit submit_text
