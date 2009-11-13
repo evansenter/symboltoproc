@@ -103,6 +103,11 @@ div#footer > p {
   text-align: center;
 }
 
+div#footer a {
+  color: #bbb;
+  text-decoration: none;
+}
+
 div#footer, div#pusher {
   height: 75px;
 }
