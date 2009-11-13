@@ -144,10 +144,11 @@ div.post {
   margin-top: 1.5em;
 }
 
-div.post > div.post_date {
+div.post_date {
   font: small-caps 125% palatino, georgia, serif;
   letter-spacing: .25em;
   text-align: center;
+  margin-top: 1.5em;
   border-bottom: 1px solid #ddd;
 }
 

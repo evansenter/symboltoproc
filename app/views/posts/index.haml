@@ -1,7 +1,8 @@
-- @posts.each do |post|
-  .post
-    .post_date= post.created_at.strftime(date_format_string)
-    %h3= link_to post.title, post_path(post)
-    .post_body= post.body
-    
-    - _edit_post(:post => post)
+- @post_groups.each do |post_date, posts|
+  .post_date= post_date.strftime(date_format_string)
+  - posts.each do |post|
+    .post
+      %h3= link_to post.title, post_path(post)
+      .post_body= post.body
+      
+      - _edit_post(:post => post)

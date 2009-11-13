@@ -4,11 +4,11 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = Post.all(:order => "created_at DESC")
+    @post_groups = Post.all_grouped_by_date
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @posts }
+      format.xml  { render :xml => Post.all(:order => "created_at DESC") }
     end
   end
 
