@@ -5,13 +5,6 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 
 CKEDITOR.editorConfig = function(config) {
   config.PreserveSessionOnFileBrowser = true;
-  // Define changes to default configuration here. For example:
-  // config.language = 'fr';
-  // config.uiColor = '#AADC6E';
- 
-  //config.ContextMenu = ['Generic','Anchor','Flash','Select','Textarea','Checkbox','Radio','TextField','HiddenField','ImageButton','Button','BulletedList','NumberedList','Table','Form'] ;
- 
-  // ONLY CHANGE BELOW HERE
   
   config.uiColor = "#eee";
   config.resize_enabled = false;
@@ -39,6 +32,6 @@ CKEDITOR.addStylesSet("code_style", [
   {
     name: "Code snippet",
     element: "pre",
-    attributes: { "class": "code_sample" }
+    attributes: { "class": "prettyprint" }
   }
 ]);

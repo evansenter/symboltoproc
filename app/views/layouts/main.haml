@@ -7,7 +7,7 @@
     = javascript_include_tag :defaults
     = javascript_auto_include_tags
     = behaveJS_bootstrap
-  %body
+  %body{ :onload => "prettyPrint()" }
     /
       = "Running in the #{RAILS_ENV} environment."
     #wrapper
@@ -19,5 +19,5 @@
         = yield
       #pusher
     #footer 
-      %p= "Built by evansenter [at] gmail [dot] com." + logged_in_notice
+      %p= "Built by evansenter [at] gmail [dot] com - I don't know what to put here." + logged_in_notice
     = analytics_code

@@ -3,5 +3,5 @@
   - posts.each do |post|
     .post
       %h3= link_to post.title, post_path(post)
-      .post_body= post.body
+      .post_body~ post.body
       - _edit_post_buttons(:post => post)
