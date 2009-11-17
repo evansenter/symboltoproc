@@ -70,7 +70,7 @@ div#content {
   padding: 1.5em;
 }
 
-div#content p {
+div#content p, div#content pre {
   margin-bottom: .75em;
 }
 
@@ -178,9 +178,15 @@ div.post div.post_body a {
 }
 
 div.post blockquote {
-  background: transparent url("/images/quote.png") no-repeat scroll left top;
-  margin-left: .5em;
-  padding-left: 24px;
+  border-left: 1px solid #ddd;
+  padding-left: 1em;
+}
+
+div.post pre.prettyprint {
+  background-color: #eee;
+  border: 1px solid #ddd;
+  padding: .5em 1em;
+  font-size: 90%;
 }
 
 /* Styling for post forms. */

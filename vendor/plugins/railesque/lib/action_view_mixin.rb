@@ -10,7 +10,7 @@ ActionView::Helpers::AssetTagHelper.register_javascript_include_default([
 ActionView::Helpers::AssetTagHelper.register_stylesheet_expansion({
   :defaults => [
     "reset",
-    "main",
-    "prettify"
+    "prettify",
+    "main"
   ]
 })
