@@ -1,8 +1,8 @@
 class Admin < ActiveRecord::Base
   validates_presence_of :password
   
-  def self.current
-    first
+  def self.password
+    first && first.password
   end
   
   def self.set_password(string)    

@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   helper_method :admin?
   
   def admin?
-    session[:password] == Admin.current.password
+    session[:password] == Admin.password
   end
   
   def authorize
