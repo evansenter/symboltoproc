@@ -9,7 +9,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091112222030) do
+ActiveRecord::Schema.define(:version => 20091117013524) do
+
+  create_table "admins", :force => true do |t|
+    t.string "password"
+  end
 
   create_table "posts", :force => true do |t|
     t.string   "title"
