@@ -1,7 +1,4 @@
 - @post_groups.each do |post_date, posts|
   .post_date= post_date.strftime(date_format_string)
   - posts.each do |post|
-    .post
-      %h3= link_to post.title, post_path(post)
-      .post_body~ post.body
-      - _edit_post_buttons(:post => post)
+    - _post_body(:post => post)
