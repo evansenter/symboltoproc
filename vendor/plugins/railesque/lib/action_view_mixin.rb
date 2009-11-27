@@ -1,9 +1,10 @@
 ActionView::Helpers::AssetTagHelper.register_javascript_include_default([
-  "behaveJS",
-  "behaveJS_application",
   "ckeditor/ckeditor",
+  "jquery-1.3.2",
   "underscore",
-  "prettify"
+  "prettify",
+  "behaveJS",
+  "behaveJS_application"
 ])
 
 ActionView::Helpers::AssetTagHelper.register_stylesheet_expansion({

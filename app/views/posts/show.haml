@@ -1,1 +1,5 @@
-- _post_body(:post => @post)
+.post
+  .post_date= @post.created_at.strftime(date_format_string)
+  %h3= @post.title
+  .post_body~ @post.body
+  - _edit_post_buttons(:post => @post)

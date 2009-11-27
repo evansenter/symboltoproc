@@ -222,14 +222,3 @@ div#post_form form div input[type="submit"] {
 .cke_toolbox_collapser {
   display: none;
 }
-
-/*************************************/
-/*** C O M M E N T   S T Y L I N G ***/
-/*************************************/
-
-div.post_comment_header {
-  font: small-caps 100% palatino, georgia, serif;
-  letter-spacing: .2em;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
-}

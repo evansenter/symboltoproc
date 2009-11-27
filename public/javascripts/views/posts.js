@@ -1,7 +1,8 @@
-behaveJS.addRemoteActions({
-  commentsForPost : function(response) {
-    var data = response.responseJSON;
-
-    $(data.div).innerHTML = data.comments;
-  }
-});
+$(function() {
+  if ($('textarea').length > 0) {       
+    var data = $('textarea');
+    $.each(data, function(i) {
+      CKEDITOR.replace(data[i].id);
+    });     
+  }  
+}); 

@@ -1,8 +1,0 @@
-.post
-  - if drilldown?
-    .post_date= post.created_at.strftime(date_format_string)
-  %h3= link_or_show_title_for(post)
-  .post_body~ post.body
-  / .post_comment_header= link_to "Comments (#{post.comments.count})", post_comments_path(post), :remote => true
-  = "<div id='comments_for_post_#{post.id}'></div>"
-  - _edit_post_buttons(:post => post)
