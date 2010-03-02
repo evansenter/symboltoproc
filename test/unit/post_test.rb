@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class PostTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
   test "all_grouped_by_date" do
     Post.destroy_all
     

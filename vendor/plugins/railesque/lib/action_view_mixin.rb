@@ -1,5 +1,4 @@
 ActionView::Helpers::AssetTagHelper.register_javascript_include_default([
-  "ckeditor/ckeditor",
   "underscore",
   "prettify",
   "behaveJS",

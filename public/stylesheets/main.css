@@ -151,7 +151,8 @@ div.post {
 }
 
 div.post_date {
-  font: small-caps 125% palatino, georgia, serif;
+  color: #ddd;
+  font: 125% palatino, georgia, serif;
   letter-spacing: .25em;
   text-align: center;
   margin-top: 1.5em;
@@ -209,17 +210,11 @@ div#post_form form div label[class~="required"]:before {
   content: "* ";
 }
 
-div#post_form form div input[type="text"] {
+div#post_form form div input[type="text"], div#post_form form div textarea {
   width: 100%;
   font-size: 1.1em;
 }
 
 div#post_form form div input[type="submit"] {
   float: right;
-}
-
-/* CKEditor overrides. */
-
-.cke_toolbox_collapser {
-  display: none;
 }
