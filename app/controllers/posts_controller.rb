@@ -39,7 +39,10 @@ class PostsController < ApplicationController
   private
   
   def authorize_owner
-    (current_user.try(:info) || {})["screen_name"] == ENV["BLOG_OWNER"]
+    unless (current_user.try(:info) || {})["screen_name"] == ENV["BLOG_OWNER"]
+      flash[:notice] = "You do not have permission for that page."
+      redirect_to root_path
+    end
   end
   
   def find_post

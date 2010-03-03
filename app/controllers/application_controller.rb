@@ -23,11 +23,4 @@ class ApplicationController < ActionController::Base
   def current_user
     @client || authorized?
   end
-  
-  def authorize
-    unless authorized?
-      flash[:notice] = "You do not have permission for that page."
-      redirect_to root_path
-    end
-  end
 end
