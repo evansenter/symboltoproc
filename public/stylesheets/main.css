@@ -185,7 +185,7 @@ div.post blockquote {
 
 div.post pre.prettyprint {
   overflow: auto;
-  background-color: #eee;
+  background-color: #fafafa;
   border: 1px solid #ddd;
   padding: .5em 1em;
   font-size: 90%;
