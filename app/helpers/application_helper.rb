@@ -15,8 +15,4 @@ module ApplicationHelper
       } catch(err) {}</script>
     JS
   end
-  
-  def logged_in_notice
-    admin? ? " You are currently logged in, " + link_to("logout?", logout_path) : ""
-  end
 end

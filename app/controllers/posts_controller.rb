@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_filter :authorize, :except => [:index, :show]
-  before_filter :find_post, :except => [:index, :new, :create]
+  before_filter :authorize_owner, :except => [:index, :show]
+  before_filter :find_post,       :except => [:index, :new, :create]
   
   def index
     @post_groups = Post.all_grouped_by_date
@@ -37,6 +37,10 @@ class PostsController < ApplicationController
   end
   
   private
+  
+  def authorize_owner
+    (current_user.try(:info) || {})["screen_name"] == ENV["BLOG_OWNER"]
+  end
   
   def find_post
     @post = Post.find(params[:id])
