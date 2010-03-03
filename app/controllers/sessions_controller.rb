@@ -18,5 +18,8 @@ class SessionsController < ApplicationController
     end
     
     redirect_to root_path
+  rescue OAuth::Unauthorized => error
+    flash[:notice] = "Sorry, but you don't appear to be authorized!"
+    redirect_to root_path
   end
 end
