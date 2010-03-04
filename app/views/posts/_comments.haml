@@ -1,9 +1,12 @@
-- _add_comment(:post => post)
+#comments
+  - _add_comment(:post => post)
 
-- unless post.comments.empty?
-  %h3 Comments
-  - post.comments.each do |comment|
-    .comment
-      .icon= image_tag(comment.icon) if comment.icon
-      .name= comment.name
-      .body~ comment.body
+  - unless post.comments.empty?
+    %h3 comments
+    - post.comments.each do |comment|
+      .comment
+        .name
+          ~ comment.name
+          %span.time_ago= "said #{time_ago_in_words(comment.created_at)} ago"
+        .icon= image_tag(comment.icon) if comment.icon
+        .body~ comment.body

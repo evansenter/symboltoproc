@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     @comment       = Post.find(params[:post_id]).comments.build(params[:comment].merge(user_info))
     flash[:notice] = @comment.save ? "Post was successfully created." : "There was a problem with your comment."
     
-    redirect_to @post
+    redirect_to @comment.post
   end
 
   def destroy

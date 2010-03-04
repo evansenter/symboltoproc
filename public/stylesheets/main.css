@@ -206,7 +206,7 @@ div.post pre.prettyprint {
   font-size: 90%;
 }
 
-div.post div.comments, div.post div#add_comment h3 {
+div.post div.comments, div.post div#comments h3 {
   font-family: arial;
   font-weight: normal;
   letter-spacing: .5em;
@@ -272,4 +272,23 @@ div#add_comment form textarea {
 
 div#add_comment form input#comment_submit {
   float: right;
+}
+
+/* Styling for comments */
+
+div#comments div.comment {
+  margin: 1em 0;
+}
+
+div#comments div.comment div.name span.time_ago {
+  color: #aaa;
+}
+
+div#comments div.comment div.body {
+  font-family: arial;
+  background-color: #fafafa;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin-top: .25em;
+  padding: .5em;
 }

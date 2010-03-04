@@ -1,7 +1,7 @@
 #add_comment
   - if authorized?
     %h3 add comment
-    - form_for post.comments.build, :url => post_comments_path(post), :html => { :class => "clear_after" } do |form|
+    - form_for :comment, :url => post_comments_path(post), :html => { :class => "clear_after" } do |form|
       %div
         = form.text_area :body
         = observe_field :comment_body, :function => "updateCommentability(value);", :frequency => 0.25
