@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   def login
     twitter_request = Twitterite.request_token(twitter_authenticate_url)
     
+    session[:original_location]      = params[:original_location]
     session[:twitter_request_token]  = twitter_request.token
     session[:twitter_request_secret] = twitter_request.secret
     
@@ -15,11 +16,12 @@ class SessionsController < ApplicationController
     if client.authorized?
       session[:twitter_access_token]  = twitter_access.token
       session[:twitter_access_secret] = twitter_access.secret
+      
+      flash[:notice] = "Login successful!"
     end
-    
-    redirect_to root_path
   rescue OAuth::Unauthorized => error
     flash[:notice] = "Sorry, but you don't appear to be authorized!"
-    redirect_to root_path
+  ensure
+    redirect_to session.delete(:original_location) || root_path
   end
 end

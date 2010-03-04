@@ -1,7 +1,9 @@
-- @post_groups.each do |post_date, posts|
-  .post_date= post_date.strftime(date_format_string)
-  - posts.each do |post|
-    .post
-      %h3= link_to post.title, post_path(post)
-      .post_body~ post.body
-      - _edit_post_buttons(:post => post)
+- @posts.each do |post|
+  .post_date= post.created_at.to_date.strftime(date_format_string)
+  .post
+    %h3= link_to post.title, post_path(post)
+    .post_body~ post.body
+    .comments= link_to("#{pluralize(post.comments.count, 'comment')}", post_path(post))
+    - _edit_post_buttons(:post => post)
+    
+= will_paginate @posts, :previous_label => "Newer", :next_label => "Older"

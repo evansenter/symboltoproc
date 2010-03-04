@@ -1,7 +1,7 @@
-require 'test_helper'
+require "test_helper"
 
 class PostTest < ActiveSupport::TestCase
-  test "all_grouped_by_date" do
+  test "ordered named_scope" do
     Post.destroy_all
     
     post_from_today_1 = Post.create(:title => "Anything.", :body => "Anything.")
@@ -13,28 +13,15 @@ class PostTest < ActiveSupport::TestCase
     (post_from_hella_ago_1 = Post.create(:title => "Anything.", :body => "Anything.")).update_attribute(:created_at, Time.now - 1.month)
     (post_from_hella_ago_2 = Post.create(:title => "Anything.", :body => "Anything.")).update_attribute(:created_at, Time.now - 1.month)
     
-    assert_equal [
-      [
-        post_from_today_1.created_at.to_date,
-        [
-          post_from_today_2,
-          post_from_today_1
-        ]
-      ],
-      [
-        post_from_yesterday_1.created_at.to_date,
-        [
-          post_from_yesterday_2,
-          post_from_yesterday_1
-        ]
-      ],
-      [
-        post_from_hella_ago_1.created_at.to_date,
-        [
-          post_from_hella_ago_2,
-          post_from_hella_ago_1
-        ]
-      ]
-    ], Post.all_grouped_by_date
+    expected_post_order = [
+      post_from_today_2, 
+      post_from_today_1, 
+      post_from_yesterday_2, 
+      post_from_yesterday_1, 
+      post_from_hella_ago_2, 
+      post_from_hella_ago_1
+    ]
+    
+    assert_equal expected_post_order, Post.ordered
   end
 end

@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_filter :find_post,       :except => [:index, :new, :create]
   
   def index
-    @post_groups = Post.all_grouped_by_date
+    @posts = Post.ordered.paginate(:page => params[:page], :per_page => 5)
   end
 
   def new
@@ -39,7 +39,7 @@ class PostsController < ApplicationController
   private
   
   def authorize_owner
-    unless (current_user.try(:info) || {})["screen_name"] == ENV["BLOG_OWNER"]
+    unless admin?
       flash[:notice] = "You do not have permission for that page."
       redirect_to root_path
     end

@@ -3,3 +3,4 @@
   %h3= @post.title
   .post_body~ @post.body
   - _edit_post_buttons(:post => @post)
+  - _comments(:post => @post)

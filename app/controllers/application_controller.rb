@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password
   
-  helper_method :authorized?, :current_user
+  helper_method :authorized?, :current_user, :admin?
   
   def authorized?
     if !instance_variable_defined?(:@client) && session[:twitter_access_token] && session[:twitter_access_secret]
@@ -21,6 +21,10 @@ class ApplicationController < ActionController::Base
   end
   
   def current_user
-    @client || authorized?
+    ((@client || authorized?).try(:info) || {}).symbolize_keys
+  end
+  
+  def admin?
+    current_user["screen_name"] == ENV["BLOG_OWNER"]
   end
 end
