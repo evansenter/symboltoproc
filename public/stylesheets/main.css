@@ -186,7 +186,6 @@ div.post > h3 > a:hover {
 
 div.post div.post_body {
   font-family: arial;
-  letter-spacing: .1em;
 }
 
 div.post div.post_body a {
@@ -205,7 +204,6 @@ div.post pre.prettyprint {
   border: 1px solid #ddd;
   padding: .5em 1em;
   font-size: 90%;
-  letter-spacing: 0;
 }
 
 div.post div.comments, div.post div#add_comment h3 {
