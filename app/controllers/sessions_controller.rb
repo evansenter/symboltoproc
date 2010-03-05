@@ -10,8 +10,14 @@ class SessionsController < ApplicationController
   end
   
   def authenticate
+    p "session in authenticate"
+    p session.inspect
+    
     client         = Twitterite.new
     twitter_access = client.authorize(session.delete(:twitter_request_token), session.delete(:twitter_request_secret), :oauth_verifier => params[:oauth_verifier])
+    
+    p "twitter_access"
+    p twitter_access
     
     if client.authorized?
       session[:twitter_access_token]  = twitter_access.token
