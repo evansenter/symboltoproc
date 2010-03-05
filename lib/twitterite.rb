@@ -4,9 +4,6 @@ class Twitterite < TwitterOAuth::Client
   end
   
   def self.request_token(return_url)
-    token = new.request_token(:oauth_callback => return_url)
-    p "self.request_token"
-    p token
-    token
+    new.request_token(:oauth_callback => return_url)
   end
 end

@@ -25,6 +25,6 @@ class ApplicationController < ActionController::Base
   end
   
   def admin?
-    current_user["screen_name"] == ENV["BLOG_OWNER"]
+    current_user[:screen_name] == ENV["BLOG_OWNER"]
   end
 end

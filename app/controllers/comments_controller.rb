@@ -16,15 +16,15 @@ class CommentsController < ApplicationController
   
   def user_info
     {
-      :name => current_user["screen_name"],
-      :icon => current_user["icon"]
+      :name => current_user[:screen_name],
+      :icon => current_user[:icon]
     }
   end
   
   def authorize_owner
     @comment = Comment.find(params[:id])
     
-    unless admin? || current_user["screen_name"] == @comment.name
+    unless admin? || current_user[:screen_name] == @comment.name
       flash[:notice] = "You do not have permission to do that."
       redirect_to post_path(@comment.post)
     end
