@@ -2,6 +2,8 @@ class CommentsController < ApplicationController
   before_filter :authorize_owner, :only => :destroy
   
   def create
+    raise current_user.inspect
+    
     @comment       = Post.find(params[:post_id]).comments.build(params[:comment].merge(user_info))
     flash[:notice] = @comment.save ? "Post was successfully created." : "There was a problem with your comment."
     
