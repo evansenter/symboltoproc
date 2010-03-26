@@ -10,7 +10,6 @@ html, body {
 
 body {
   background: url("/images/background_tartan.png");
-  font-family: "Trebuchet MS", Verdana, Helvetica, sans-serif;
 }
 
 body, p, ol, ul, td {
@@ -42,7 +41,6 @@ div#footer {
   color: #666;
   width: 800px;
   margin: 0 auto;
-  font-family: arial;
 }
 
 div#footer > div#footer_internals {
@@ -151,7 +149,6 @@ div#edit_post_buttons > form {
 
 div.pagination {
   text-align: right;
-  font-family: arial;
 }
 
 /* Styling for individual post display. */
@@ -162,7 +159,7 @@ div.post {
 
 div.post_date {
   color: #ddd;
-  font: 125% palatino, georgia, serif;
+  font-size: 125%;
   letter-spacing: .25em;
   text-align: center;
   margin-top: 1.5em;
@@ -170,7 +167,7 @@ div.post_date {
 }
 
 div.post > h3 {
-  font: 150% palatino, georgia, serif;
+  font-size: 150%;
   letter-spacing: .1em;
   margin: 1.25em 0 .75em;
 }
@@ -182,10 +179,6 @@ div.post > h3 > a {
 
 div.post > h3 > a:hover {
   text-decoration: underline;
-}
-
-div.post div.post_body {
-  font-family: arial;
 }
 
 div.post div.post_body a {
@@ -207,7 +200,6 @@ div.post pre.prettyprint {
 }
 
 div.post div.comments, div.post div#comments h3 {
-  font-family: arial;
   font-weight: normal;
   letter-spacing: .5em;
   text-align: center;
@@ -285,7 +277,6 @@ div#comments div.comment div.name span.time_ago {
 }
 
 div#comments div.comment div.body {
-  font-family: arial;
   background-color: #fafafa;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
