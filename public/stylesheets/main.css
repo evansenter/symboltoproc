@@ -17,7 +17,7 @@ body {
 }
 
 body, p, ol, ul, td {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 22px;
 }
 
@@ -201,7 +201,7 @@ div.post pre.prettyprint {
   background-color: #fafafa;
   border: 1px solid #ddd;
   padding: .5em 1em;
-  font-size: 90%;
+  font-size: 85%;
 }
 
 div.post div.comments, div.post div#comments h3 {
