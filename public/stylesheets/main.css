@@ -4,6 +4,10 @@
 
 /* Catch-all styles. */
 
+img#typekit-badge-lir8lfc {
+  display: none !important;
+}
+
 html, body {
   height: 100%;
 }
