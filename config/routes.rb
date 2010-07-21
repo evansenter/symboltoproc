@@ -1,8 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :posts do |posts|
-    posts.resources :comments, :only => [:create, :destroy]
-  end
-
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
@@ -12,8 +8,6 @@ ActionController::Routing::Routes.draw do |map|
   # Sample of named route:
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
   # This route can be invoked with purchase_url(:id => product.id)
-  map.twitter_login        "twitter/login",        :controller => "sessions", :action => "login"
-  map.twitter_authenticate "twitter/authenticate", :controller => "sessions", :action => "authenticate"
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   map.resources :products
@@ -23,12 +17,16 @@ ActionController::Routing::Routes.draw do |map|
 
   # Sample resource route with sub-resources:
   #   map.resources :products, :has_many => [ :comments, :sales ], :has_one => :seller
+  map.resource :user_sessions, :only => [:new, :create, :destroy]
   
   # Sample resource route with more complex sub-resources
   #   map.resources :products do |products|
   #     products.resources :comments
   #     products.resources :sales, :collection => { :recent => :get }
   #   end
+  map.resources :posts do |posts|
+    posts.resources :comments, :only => [:create, :destroy]
+  end
 
   # Sample resource route within a namespace:
   #   map.namespace :admin do |admin|

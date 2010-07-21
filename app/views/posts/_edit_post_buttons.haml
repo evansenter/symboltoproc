@@ -1,4 +1,4 @@
-- if admin?
+- if current_user
   #edit_post_buttons.clear_after
     = button_to "edit post", edit_post_path(post), :method => :get
     = button_to "remove post", post_path(post), :method => :delete, :confirm => "Are you sure?"

@@ -1,0 +1,15 @@
+%h1 Login
+
+%div
+  - form_for @user_session, :url => user_sessions_path do |form|
+    = form.error_messages
+    %div
+      = form.label :email
+      = form.text_field :email
+    %div
+      = form.label :password
+      = form.password_field :password
+    %div
+      = form.check_box :remember_me
+      = form.label :remember_me
+    %div= form.submit "Login"

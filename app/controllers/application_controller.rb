@@ -10,21 +10,35 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password
   
-  helper_method :authorized?, :current_user, :admin?
+  helper_method :current_user,:current_user_session
   
-  def authorized?
-    if !instance_variable_defined?(:@client) && session[:twitter_access_token] && session[:twitter_access_secret]
-      @client = Twitterite.new(:token => session[:twitter_access_token], :secret => session[:twitter_access_secret])
-    end
-    
-    @client if @client.try(:authorized?)
+  private
+  
+  def current_user_session
+    return @current_user_session if defined?(@current_user_session)
+    @current_user_session = UserSession.find
   end
-  
+
   def current_user
-    ((@client || authorized?).try(:info) || {}).symbolize_keys
+    return @current_user if defined?(@current_user)
+    @current_user = current_user_session && current_user_session.user
   end
   
-  def admin?
-    current_user[:screen_name] == ENV["BLOG_OWNER"]
+  def require_user
+    unless current_user
+      store_location
+      flash[:notice] = "You must be logged in to access this page"
+      redirect_to root_url
+      return false
+    end
+  end
+
+  def store_location
+    session[:return_to] = request.request_uri
+  end
+
+  def redirect_back_or_default
+    redirect_to(session[:return_to] || root_url)
+    session[:return_to] = nil
   end
 end

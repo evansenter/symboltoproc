@@ -3,4 +3,8 @@ class Comment < ActiveRecord::Base
   
   validates_associated :post
   validates_presence_of :name, :body
+  
+  before_validation do |comment|
+    comment.name ||= "someone"
+  end
 end
