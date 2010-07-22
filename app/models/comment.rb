@@ -5,6 +5,6 @@ class Comment < ActiveRecord::Base
   validates_presence_of :name, :body
   
   before_validation do |comment|
-    comment.name ||= "someone"
+    comment.name = "someone" if comment.name.blank?
   end
 end
